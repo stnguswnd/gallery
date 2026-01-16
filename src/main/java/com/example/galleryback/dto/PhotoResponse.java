@@ -1,7 +1,6 @@
 package com.example.galleryback.dto;
 
 import com.example.galleryback.entity.Photo;
-import jakarta.validation.constraints.NotBlank;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -16,6 +15,6 @@ public class PhotoResponse {
     private String imageUrl;
 
     public static PhotoResponse from(Photo photo) {
-        return PhotoResponse.builder().id(photo.getId()).title(photo.getTitle()).description(photo.getDescription()).imageUrl(photo.getImageUrl())
+        return PhotoResponse.builder().id(photo.getId()).title(photo.getTitle()).description(photo.getDescription()).imageUrl(photo.getImageUrl());
     }
 }
