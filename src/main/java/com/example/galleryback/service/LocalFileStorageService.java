@@ -1,6 +1,6 @@
 package com.example.galleryback.service;
 
-import lombok.Value;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 import java.util.UUID;
 
 @Service
-public class LocalFileStorageService {
+public class LocalFileStorageService implements FileStorageService {
 
     @Value("${upload.path}")
     private String uploadPath;
@@ -37,5 +37,6 @@ public class LocalFileStorageService {
             Files.deleteIfExists(filePath);
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
     }
 }
